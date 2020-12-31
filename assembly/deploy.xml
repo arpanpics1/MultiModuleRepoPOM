@@ -1,0 +1,54 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+    <id>deploy</id>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <formats>
+        <format>zip</format>
+    </formats>
+
+    <files>
+        <file>
+            <source>${project.basedir}/../module1/target/module1-1.0-SNAPSHOT.jar</source>
+            <outputDirectory>lib</outputDirectory>
+            <destName>module1.jar</destName>
+        </file>
+
+        <file>
+            <source>${project.basedir}/../module2/target/module2-1.0-SNAPSHOT.jar</source>
+            <outputDirectory>lib</outputDirectory>
+            <destName>module2.jar</destName>
+        </file>
+
+        <file>
+            <source>${project.basedir}/../module3/target/module3-1.0-SNAPSHOT.jar</source>
+            <outputDirectory>lib</outputDirectory>
+            <destName>module3.jar</destName>
+        </file>
+    </files>
+
+
+<!--
+    <fileSets>
+        <fileSet>
+            <outputDirectory>script</outputDirectory>
+            <directory>src/main/linuxScripts</directory>
+            <filtered>false</filtered>
+            <fileMode>0755</fileMode>
+            <directoryMode>0755</directoryMode>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+
+        <fileSet>
+            <outputDirectory>configuration</outputDirectory>
+            <directory>src/main/conf</directory>
+            <filtered>false</filtered>
+            <fileMode>0755</fileMode>
+            <directoryMode>0755</directoryMode>
+            <lineEnding>unix</lineEnding>
+        </fileSet>
+    </fileSets>
+    -->
+
+</assembly>
